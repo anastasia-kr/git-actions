@@ -11,7 +11,7 @@ from db import (ProductModel,
                 delete_product)
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"*": {"origins": "*"}})
 api = Api(app)
 
 
@@ -72,8 +72,8 @@ class Product(Resource):
 
 
 # Add the resources to the API
-api.add_resource(Products, "/api/products")
-api.add_resource(Product, "/api/products/<int:product_id>")
+api.add_resource(Products, "/products")
+api.add_resource(Product, "/products/<int:product_id>")
 
 
 
