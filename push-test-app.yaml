@@ -1,0 +1,18 @@
+name: test_python_app
+run-name: ${{ github.actor }}
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  TestRun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: ls -al
+      - run: |
+          pip install -r requirements.txt
+          python python-app-anastasia-kr/db.py -a
+      - run: echo "Unit tests successful!"
