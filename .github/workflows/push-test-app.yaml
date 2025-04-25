@@ -14,5 +14,5 @@ jobs:
       - run: ls -al
       - run: |
           pip install -r requirements.txt
-          python python-app-anastasia-kr/db.py -a
+          python db.py -a
       - run: echo "Unit tests successful!"
